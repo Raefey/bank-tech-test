@@ -8,9 +8,9 @@ To run the tests, simply go to the parent folder and run `rspec`
 
 ### Built with
 
-[RSpec](http://rspec.info/)
+[RSpec](http://rspec.info/) - Testing framework
 
-[Atom](https://atom.io/)
+[Atom](https://atom.io/) - Text editor
 
 ### User stories
 
