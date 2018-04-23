@@ -2,7 +2,7 @@ require 'printer'
 
 describe Printer do
 
-  subject(:printer) { described_class.new }
+  subject(:printer) { described_class.new('fake account') }
 
   describe '.print_header' do
     it 'should print a header once' do
