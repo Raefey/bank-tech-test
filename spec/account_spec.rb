@@ -9,4 +9,11 @@ describe Account do
       expect(account.balance).to eq(0)
     end
   end
+
+  describe '.deposit' do
+    it 'adds the amoun to the balance' do
+      account.deposit(5)
+      expect(account.balance).to eq(5)
+    end
+  end
 end
