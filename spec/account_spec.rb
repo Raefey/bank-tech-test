@@ -11,9 +11,16 @@ describe Account do
   end
 
   describe '.deposit' do
-    it 'adds the amoun to the balance' do
+    it 'adds the amount to the balance' do
       account.deposit(5)
       expect(account.balance).to eq(5)
     end
   end
+
+  describe '.withdraw' do
+    it 'subtracts the amount from the balance' do
+     account.withdraw(5)
+     expect(account.balance).to eq(-5)
+   end
+ end
 end
