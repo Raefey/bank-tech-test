@@ -2,7 +2,7 @@
 
 ### Getting started
 
-Simply clone the Repo and run the program in the console, and interact with it from the command line.
+Simply clone the Repo and run the program in the console, and interact with it from the command line using IRB or something similar.
 
 To run the tests, simply go to the parent folder and run `rspec`
 
