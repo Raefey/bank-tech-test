@@ -1,4 +1,4 @@
-require 'account'
+require_relative 'account.rb'
 
 class Printer
 
