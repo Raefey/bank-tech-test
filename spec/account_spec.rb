@@ -12,24 +12,24 @@ describe Account do
 
   describe '.deposit' do
     it 'adds the amount to the balance' do
-      account.deposit(5)
+      account.credit(5)
       expect(account.balance).to eq(5)
     end
 
     it 'adds the transaction to the transaction history' do
-      account.deposit(5)
-      expect(account.transaction_history).to eq([5])
+      account.credit(5)
+      expect(account.transaction_history[0]).to have_attributes(:credit => 5)
     end
   end
 
   describe '.withdraw' do
     it 'subtracts the amount from the balance' do
-       account.withdraw(5)
+       account.debit(5)
        expect(account.balance).to eq(-5)
     end
     it 'adds the transaction to the transaction history' do
-      account.withdraw(5)
-      expect(account.transaction_history).to eq([-5])
+      account.debit(5)
+      expect(account.transaction_history[0]).to have_attributes(:debit => 5, :credit => nil)
     end
   end
 end
