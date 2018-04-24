@@ -1,6 +1,7 @@
 class Deposit
 
   attr_reader :credit, :debit
+  attr_accessor :balance_at_that_time
 
   def initialize(amount)
     @credit = amount

@@ -1,6 +1,7 @@
 class Withdrawal
 
   attr_reader :debit, :credit
+  attr_accessor :balance_at_that_time
 
   def initialize(amount)
     @debit = amount

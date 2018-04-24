@@ -12,13 +12,14 @@ class Printer
   def array_formatter
     @array_of_transactions_with_header.push(print_header)
     account.transaction_history.each do |y|
-      @array_of_transactions_with_header.push("#{y.date} || #{y.credit} || #{y.debit}")
+      @array_of_transactions_with_header.push("#{y.date} || #{y.credit} || #{y.debit} || #{y.balance_at_that_time}")
     end
   end
 
 
   def print_all_transactions
     array_formatter
+    p array_of_transactions_with_header
     array_of_transactions_with_header.each { |x| x }
   end
 
