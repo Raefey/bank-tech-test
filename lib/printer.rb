@@ -19,7 +19,7 @@ class Printer
 
   def print_all_transactions
     array_formatter
-    array_of_transactions_with_header.each { |x| p x}
+    array_of_transactions_with_header.each { |x| x }
   end
 
   private
