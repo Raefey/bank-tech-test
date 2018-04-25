@@ -15,15 +15,18 @@ class Account
   def credit(amount)
     @balance += amount
     new_deposit_object = deposit.new(amount)
-    new_deposit_object.balance_at_that_time = balance
-    @transaction_history.push(new_deposit_object)
+    object_formatter(new_deposit_object)
   end
 
   def debit(amount)
     @balance -= amount
     new_withdrawal_object = withdrawal.new(amount)
-    new_withdrawal_object.balance_at_that_time = balance
-    @transaction_history.push(new_withdrawal_object)
+    object_formatter(new_withdrawal_object)
   end
 
+  private
+  def object_formatter(object)
+    object.balance_at_that_time = balance
+    @transaction_history.push(object)
+  end
 end
