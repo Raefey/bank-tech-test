@@ -1,9 +1,9 @@
+language: ruby
+rvm:
+- 2.5.0
+script:
+- bundle exec rspec
 env:
-  language: ruby
-  rvm:
-  - 2.5.0
-  script:
-  - bundle exec rspec
   global:
     - CC_TEST_REPORTER_ID=a3393919c0fa645589a0068e7fff376e3dccfe8fed924f2c67406c515c746c19
 before_script:
