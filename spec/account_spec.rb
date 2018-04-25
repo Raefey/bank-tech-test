@@ -18,7 +18,7 @@ describe Account do
 
     it 'adds the transaction to the transaction history' do
       account.credit(5)
-      expect(account.transaction_history[0]).to have_attributes(:credit => 5, :debit => nil)
+      expect(account.transaction_history.length).to be(1)
     end
   end
 
@@ -29,7 +29,7 @@ describe Account do
     end
     it 'adds the transaction to the transaction history' do
       account.debit(5)
-      expect(account.transaction_history[0]).to have_attributes(:debit => 5, :credit => nil)
+      expect(account.transaction_history.length).to be (1)
     end
   end
 end
