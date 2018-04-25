@@ -14,14 +14,12 @@ class Account
 
   def credit(amount)
     @balance += amount
-    new_deposit_object = deposit.new(amount)
-    object_formatter(new_deposit_object)
+    object_formatter(deposit.new(amount))
   end
 
   def debit(amount)
     @balance -= amount
-    new_withdrawal_object = withdrawal.new(amount)
-    object_formatter(new_withdrawal_object)
+    object_formatter(withdrawal.new(amount))
   end
 
   private
