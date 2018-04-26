@@ -1,30 +1,27 @@
-require 'deposit'
-require 'withdrawal'
+require 'transaction'
 class Account
   DEFAULT_BALANCE = 0
 
-  attr_reader :balance, :transaction_history, :withdrawal, :deposit
+  attr_reader :balance, :transaction_history, :transaction
 
-  def initialize(withdrawal = Withdrawal, deposit = Deposit)
+  def initialize(transaction = Transaction)
     @balance = DEFAULT_BALANCE
     @transaction_history = []
-    @withdrawal = withdrawal
-    @deposit = deposit
+    @transaction = transaction
   end
 
   def credit(amount)
     @balance += amount
-    object_formatter(deposit.new(amount))
+    transaction_formatter(transaction.new(amount, nil, balance))
   end
 
   def debit(amount)
     @balance -= amount
-    object_formatter(withdrawal.new(amount))
+    transaction_formatter(transaction.new(nil, amount, balance))
   end
 
   private
-  def object_formatter(object)
-    object.balance_at_that_time = balance
-    @transaction_history.push(object)
+  def transaction_formatter(transaction)
+    @transaction_history.push(transaction)
   end
 end
