@@ -4,12 +4,6 @@ describe Account do
 
   subject(:account) { described_class.new }
 
-  describe '.balance' do
-    it 'returns the current balance' do
-      expect(account.balance).to eq(0)
-    end
-  end
-
   describe '.deposit' do
     it 'adds the amount to the balance' do
       account.credit(5)
